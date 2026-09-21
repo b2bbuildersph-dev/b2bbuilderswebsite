@@ -101,3 +101,66 @@ body { background: #ded0c9; color: #141414; }
   .action-cards button { padding: 22px; }
   .project-banner { border-radius: 22px; }
 }
+
+/* Profile-sidebar variation: retained B2B actions, re-composed around the latest reference. */
+@media (min-width: 851px) {
+  .erp {
+    padding: 48px 64px 48px 200px;
+    background:
+      radial-gradient(circle at -4% 0%, #d82216 0 165px, transparent 166px),
+      radial-gradient(circle at 100% 100%, rgba(154, 32, 32, .18) 0 180px, transparent 181px),
+      #ded7d2;
+  }
+
+  .side {
+    inset: 50% auto auto 54px;
+    width: 228px;
+    height: min(740px, calc(100svh - 96px));
+    padding: 20px 14px 18px;
+    border-radius: 25px;
+    background: linear-gradient(180deg, #252525 0%, #151515 100%);
+    box-shadow: 0 26px 55px rgba(27, 18, 17, .28);
+  }
+
+  .side-brand {
+    height: 145px;
+    padding: 14px 10px 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .side-brand > span { width: 38px; height: 38px; border-radius: 12px; background: #d82216; color: #fff; font-size: 10px; }
+  .side-brand > div { display: block; padding-top: 2px; color: #fff; font-size: 15px; line-height: 1.25; }
+  .side-brand b { color: #e7473b; }
+  .side-brand small { color: #b8aaa3; font-size: 8px; margin-top: 7px; }
+  .side-label { display: block; padding: 20px 10px 8px; color: #8f8179; font-size: 8px; }
+
+  .side-link { height: 39px; justify-content: flex-start; gap: 11px; padding: 0 11px; border-radius: 10px; color: #d6cdca; font-size: 11px; }
+  .side-link i { width: 18px; font-size: 15px; }
+  .side-link.active { background: linear-gradient(90deg, #e03225, #a51f1f); color: #fff; box-shadow: 0 8px 20px rgba(216,34,22,.2); }
+  .side-link em { position: static; margin-left: auto; font-size: 8px; }
+  .role-chip { display: flex; margin: 8px 3px; background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.08); padding: 9px 10px; }
+  .side-user { justify-content: flex-start; padding: 12px 5px 0; border-top-color: rgba(255,255,255,.1); }
+  .side-user > b { width: 31px; height: 31px; font-size: 9px; }
+  .side-user > div { display: flex; }
+  .side-user > button { display: block; }
+
+  .shell {
+    width: 100%;
+    min-height: calc(100svh - 96px);
+    margin-left: 0;
+    border-radius: 28px;
+    background: #f7f3f0;
+    box-shadow: 0 25px 65px rgba(60, 41, 35, .17);
+  }
+  .erp.dark .shell { background: #181717; }
+  .top { padding: 0 34px 0 140px; border-bottom-color: #e1d6cf; background: rgba(255,255,255,.7); }
+  .top > div:first-of-type span { color: #a02520; }
+  .page { padding: 34px 38px 60px 140px; }
+  .page-head h1 { font-size: 34px; }
+  .panel, .action-cards button { background: #fffdfb; border-color: #e6ddd7; box-shadow: 0 10px 24px rgba(58,39,31,.07); }
+  .erp.dark .panel, .erp.dark .action-cards button { background: var(--card); border-color: var(--line); }
+  .hero-metrics article, .subcon-hero > div { background: #222; }
+  .hero-metrics article:first-child, .subcon-hero > div:first-child { background: linear-gradient(145deg, #e03124, #981e1e); }
+}

@@ -29,3 +29,75 @@ body { background: #ded0c9; color: #141414; }
 .hero-metrics article, .subcon-hero > div { background: linear-gradient(135deg, #e12b1e, #9a2020); box-shadow: 0 14px 38px rgba(154, 32, 32, .22); }
 .panel, .action-cards button { box-shadow: 0 12px 34px rgba(48, 32, 25, .08); }
 
+/* Desktop command-center composition: a floating workspace with a compact rail. */
+@media (min-width: 851px) {
+  .erp {
+    display: block;
+    min-height: 100svh;
+    padding: 42px 48px 42px 118px;
+    background:
+      radial-gradient(circle at 8% 78%, rgba(216, 34, 22, .2), transparent 22%),
+      linear-gradient(135deg, #292522 0%, #171616 52%, #0d0d0d 100%);
+  }
+
+  .side {
+    inset: 50% auto auto 30px;
+    width: 62px;
+    height: min(710px, calc(100svh - 96px));
+    transform: translateY(-50%);
+    padding: 16px 8px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #d82216 0%, #9a2020 19%, #161616 19% 100%);
+    box-shadow: 0 24px 60px rgba(0,0,0,.36);
+  }
+
+  .side-brand { height: 58px; padding: 0; justify-content: center; }
+  .side-brand > span { width: 34px; height: 34px; padding: 0; display: grid; place-items: center; border-radius: 11px; font-size: 10px; }
+  .side-brand > div, .side-label, .role-chip, .side-user > div, .side-user > button { display: none; }
+  .side-link { height: 43px; justify-content: center; padding: 0; border-radius: 12px; }
+  .side-link i { width: auto; font-size: 18px; }
+  .side-link:not(.active) { color: #d4cbc6; }
+  .side-link.active { background: #d82216; box-shadow: none; transform: none; }
+  .side-link em { position: absolute; right: 5px; top: 5px; font-size: 7px; padding: 2px 4px; }
+  .side-user { justify-content: center; padding: 10px 0 0; border: 0; }
+  .side-user > b { width: 31px; height: 31px; font-size: 9px; background: #d82216; }
+
+  .shell {
+    width: 100%;
+    min-height: calc(100svh - 84px);
+    margin-left: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.48);
+    border-radius: 30px;
+    background: var(--card);
+    box-shadow: 0 30px 80px rgba(0,0,0,.28);
+  }
+
+  .top { height: 70px; padding: 0 30px; background: rgba(255,255,255,.74); }
+  .erp.dark .top { background: rgba(30,30,30,.84); }
+  .top > div:first-of-type { flex-direction: row; align-items: baseline; gap: 12px; }
+  .top > div:first-of-type strong { font-size: 12px; }
+  .top-actions > button, .notice-wrap > button { width: 35px; height: 35px; border-radius: 10px; }
+  .top-user { margin-left: 0; }
+
+  .page { max-width: 1520px; padding: 32px 34px 55px; }
+  .page-head { margin-bottom: 22px; }
+  .page-head h1 { font-size: 36px; }
+  .page-head > div > span { font-size: 12px; }
+  .panel, .action-cards button { border-radius: 20px; }
+  .panel { padding: 21px; }
+
+  .hero-metrics { gap: 14px; }
+  .hero-metrics article, .subcon-hero > div {
+    padding: 20px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #282625, #151515);
+    box-shadow: 0 14px 32px rgba(0,0,0,.13);
+  }
+  .hero-metrics article:first-child, .subcon-hero > div:first-child { background: linear-gradient(145deg, #e12b1e, #961d1d); }
+  .hero-metrics article > strong, .subcon-hero strong { font-size: 26px; }
+  .visual-grid, .visual-grid.second { gap: 14px; margin-top: 14px; }
+  .action-cards { gap: 14px; }
+  .action-cards button { padding: 22px; }
+  .project-banner { border-radius: 22px; }
+}

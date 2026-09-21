@@ -3,8 +3,8 @@
   padding: 0;
   display: grid;
   grid-template-columns: minmax(440px, 38%) 1fr;
-  background: #0d2532;
-  color: #eef8fb;
+  background: #141414;
+  color: #f6efea;
 }
 
 .auth-split .auth-panel {
@@ -12,7 +12,7 @@
   padding: clamp(32px, 5vw, 72px) clamp(32px, 5.8vw, 92px) 30px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: linear-gradient(155deg, #102f3e 0%, #0b2430 100%);
+  background: linear-gradient(155deg, #1e1e1e 0%, #141414 66%, #101010 100%);
   position: relative;
   z-index: 1;
 }
@@ -24,7 +24,7 @@
   height: 380px;
   left: -230px;
   top: 38%;
-  border: 1px solid rgba(95, 202, 239, .13);
+  border: 1px solid rgba(216, 34, 22, .2);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -35,7 +35,7 @@
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  color: #f8fcfd;
+  color: #fffaf6;
 }
 
 .auth-split .auth-logo > span {
@@ -45,15 +45,15 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  color: #082534;
-  background: linear-gradient(135deg, #37b6ed, #8bd9f6);
+  color: #fffaf6;
+  background: linear-gradient(135deg, #df2a1d, #9a2020);
   font-size: 11px;
   letter-spacing: -.8px;
-  box-shadow: 0 8px 24px rgba(31, 170, 225, .24);
+  box-shadow: 0 8px 24px rgba(216, 34, 22, .28);
 }
 
 .auth-split .auth-logo strong { font-size: 18px; letter-spacing: .2px; }
-.auth-split .auth-logo i { color: #75cef1; font-style: normal; }
+.auth-split .auth-logo i { color: #e33a2d; font-style: normal; }
 
 .auth-split .auth-body {
   display: flex;
@@ -69,20 +69,20 @@
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  color: #eff9fb;
+  color: #fffaf6;
 }
 
 .auth-split .form-intro { margin-bottom: 30px; }
-.auth-split .form-intro > span { color: #67c5eb; }
-.auth-split .form-intro h2 { color: #f6fbfc; font-size: clamp(27px, 2.2vw, 36px); letter-spacing: -1.2px; }
-.auth-split .form-intro p { color: #9dc0cd; font-size: 12px; line-height: 1.6; }
+.auth-split .form-intro > span { color: #ef4637; }
+.auth-split .form-intro h2 { color: #fffaf6; font-size: clamp(27px, 2.2vw, 36px); letter-spacing: -1.2px; }
+.auth-split .form-intro p { color: #c8b9b1; font-size: 12px; line-height: 1.6; }
 
 .auth-split .auth-card > label {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 17px;
-  color: #86aebc;
+  color: #b9aba4;
   font-size: 9px;
   font-weight: 750;
   letter-spacing: .9px;
@@ -94,52 +94,52 @@
 .auth-split .password input {
   padding: 12px 0;
   border: 0;
-  border-bottom: 1px solid rgba(142, 204, 226, .32);
+  border-bottom: 1px solid rgba(236, 219, 209, .28);
   border-radius: 0;
-  color: #f7fbfc;
+  color: #fffaf6;
   background: transparent;
   box-shadow: none;
 }
 
 .auth-split .auth-card > label input:focus,
 .auth-split .auth-card > label select:focus,
-.auth-split .password input:focus { border-color: #66ccef; }
-.auth-split .auth-card option { color: #0d2532; }
-.auth-split .password { border-bottom: 1px solid rgba(142, 204, 226, .32); }
+.auth-split .password input:focus { border-color: #e1392d; }
+.auth-split .auth-card option { color: #141414; }
+.auth-split .password { border-bottom: 1px solid rgba(236, 219, 209, .28); }
 .auth-split .password input { border-bottom: 0; }
-.auth-split .password button { color: #6ecbf0; }
+.auth-split .password button { color: #ef5749; }
 
 .auth-split .auth-options { margin: 20px 0 28px; }
-.auth-split .auth-options label { color: #a2c2cd; }
-.auth-split .auth-options button { color: #65c6ed; }
+.auth-split .auth-options label { color: #c9bbb3; }
+.auth-split .auth-options button { color: #ef5749; }
 
 .auth-split .red-button {
   width: 100%;
   padding: 14px 16px;
-  border: 1px solid #57bee6;
+  border: 1px solid #e23b2e;
   border-radius: 5px;
-  background: linear-gradient(135deg, #179bd3, #187bb9);
-  box-shadow: 0 10px 26px rgba(6, 97, 146, .26);
-  color: #f9fdff;
+  background: linear-gradient(135deg, #e02a1d, #9a2020);
+  box-shadow: 0 10px 26px rgba(154, 32, 32, .34);
+  color: #fffaf6;
 }
 
-.auth-split .red-button:hover { box-shadow: 0 14px 30px rgba(6, 97, 146, .4); }
-.auth-split .or { color: #76aebf; margin: 20px 0 12px; }
-.auth-split .outline-button { border-color: rgba(103, 202, 237, .62); color: #7bd2f3; border-radius: 5px; }
-.auth-split .auth-card > small { color: #769dac; text-align: center; display: block; margin-top: 17px; }
+.auth-split .red-button:hover { box-shadow: 0 14px 30px rgba(154, 32, 32, .52); }
+.auth-split .or { color: #978881; margin: 20px 0 12px; }
+.auth-split .outline-button { border-color: rgba(237, 215, 203, .55); color: #f2ddd3; border-radius: 5px; }
+.auth-split .auth-card > small { color: #96877f; text-align: center; display: block; margin-top: 17px; }
 
 .auth-split .register-card { max-width: 470px; }
-.auth-split .reg-grid label { color: #8ab2c0; }
+.auth-split .reg-grid label { color: #b9aba4; }
 .auth-split .reg-grid input,
-.auth-split .reg-grid select { background: rgba(255,255,255,.06); border-color: rgba(142, 204, 226, .24); color: #f7fbfc; }
-.auth-split .back { color: #79d2f3; }
+.auth-split .reg-grid select { background: rgba(255,255,255,.06); border-color: rgba(236, 219, 209, .2); color: #fffaf6; }
+.auth-split .back { color: #ef5749; }
 .auth-split .sent { text-align: left; }
 
 .auth-split footer {
   position: relative;
   margin: 0;
   padding: 0;
-  color: #749dac;
+  color: #92837b;
   font-size: 9px;
   z-index: 1;
 }
@@ -148,7 +148,7 @@
   min-height: 100svh;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(110deg, rgba(5, 32, 58, .42), rgba(12, 111, 168, .06) 50%, rgba(7, 46, 81, .2)), url("/login-structure.jpg");
+  background-image: linear-gradient(110deg, rgba(20, 20, 20, .6), rgba(154, 32, 32, .13) 52%, rgba(20, 20, 20, .18)), url("/login-structure.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -157,11 +157,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(4, 26, 45, .4), transparent 45%);
+  background: linear-gradient(0deg, rgba(20, 20, 20, .62), transparent 45%);
 }
 
 @media (max-width: 850px) {
-  .auth.auth-split { display: block; background: #0d2532; }
+  .auth.auth-split { display: block; background: #141414; }
   .auth-split .auth-visual { display: none; }
   .auth-split .auth-panel { min-height: 100svh; padding: 30px 28px 24px; }
   .auth-split .auth-body { padding: 52px 0; }

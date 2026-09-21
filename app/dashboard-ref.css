@@ -1,0 +1,31 @@
+/* Shared visual language: charcoal interface, signal red actions, warm neutral canvas. */
+body { background: #ded0c9; color: #141414; }
+
+.erp {
+  --red: #d82216;
+  --red-deep: #9a2020;
+  --graphite: #1e1e1e;
+  --ink: #141414;
+  --muted: #756862;
+  --bg: #ded0c9;
+  --card: #fdf9f6;
+  --soft: #f0e7e1;
+  --line: #d7c8c0;
+}
+
+.erp.dark {
+  --ink: #fffaf6;
+  --muted: #bcaea6;
+  --bg: #141414;
+  --card: #1e1e1e;
+  --soft: #282625;
+  --line: #3a3532;
+}
+
+.side { background: linear-gradient(180deg, #d82216 0 16%, #9a2020 16% 22%, #141414 22% 100%); }
+.top { background: color-mix(in srgb, var(--card) 90%, transparent); }
+.red-button { background: linear-gradient(135deg, #e12b1e, #9a2020); box-shadow: 0 10px 27px rgba(154, 32, 32, .25); }
+.red-button:hover { box-shadow: 0 16px 36px rgba(154, 32, 32, .38); }
+.hero-metrics article, .subcon-hero > div { background: linear-gradient(135deg, #e12b1e, #9a2020); box-shadow: 0 14px 38px rgba(154, 32, 32, .22); }
+.panel, .action-cards button { box-shadow: 0 12px 34px rgba(48, 32, 25, .08); }
+

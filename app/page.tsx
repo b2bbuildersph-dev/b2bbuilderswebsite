@@ -72,8 +72,36 @@ function AuthScreen({ onLogin }: { onLogin: (role: Role) => void }) {
   const [mode, setMode] = useState<"login" | "register" | "sent">("login");
   const [role, setRole] = useState<Role>("Admin / Owner");
   const [show, setShow] = useState(false);
-  const headline = mode === "login" ? "BUILT TO BUILD." : "BUILD WITH US.";
-  return <main className="auth"><div className="auth-grid"/><header><div className="auth-logo"><span>B2B</span><strong>BUILDERS <i>PH</i></strong></div><p>Construction ERP · Manila</p></header><div className="auth-body"><section className="auth-copy"><span>BUILD WITH CLARITY</span><h1>{headline}</h1><p>One beautifully simple command center for every project, person, material, and milestone.</p><div className="role-preview">7 <span>connected roles<br/><b>One source of truth.</b></span></div></section>{mode === "login" && <form className="auth-card" onSubmit={e => { e.preventDefault(); onLogin(role); }}><FormIntro kicker="WELCOME BACK" title="Sign in to your workspace." text="Choose a demo account to preview its exact access."/><label>Demo role<select value={role} onChange={e => setRole(e.target.value as Role)}>{roles.map(r => <option key={r}>{r}</option>)}</select></label><label>Email or username<input required defaultValue="admin@b2bbuilders.ph" /></label><label>Password<div className="password"><input required type={show ? "text" : "password"} defaultValue="builtobuild"/><button type="button" onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button></div></label><div className="auth-options"><label><input type="checkbox" defaultChecked/> Remember me</label><button type="button">Forgot password?</button></div><button className="red-button">Enter as {role}<span>→</span></button><div className="or"><span>NEW USER?</span></div><button type="button" className="outline-button" onClick={() => setMode("register")}>Register an account <span>↗</span></button><small>Prototype access · any credentials work</small></form>}{mode === "register" && <form className="auth-card register-card" onSubmit={e => { e.preventDefault(); setMode("sent"); }}><button type="button" className="back" onClick={() => setMode("login")}>← Back to sign in</button><FormIntro kicker="NEW USER REGISTRATION" title="Create your access request." text="Every account is reviewed and assigned by an Admin."/><div className="reg-grid"><label>Full name<input required placeholder="Complete name"/></label><label>Contact number<input required placeholder="+63 917 000 0000"/></label><label>Email / username<input required type="email" placeholder="name@company.ph"/></label><label>User role<select value={role} onChange={e => setRole(e.target.value as Role)}>{roles.filter(r => r !== "Admin / Owner").map(r => <option key={r}>{r}</option>)}</select></label><label className="wide">Complete address<input required placeholder="Street, barangay, city, province"/></label>{role === "Subcontractor" && <><label>Facebook account / page<input required placeholder="facebook.com/page"/></label><label>Primary scope<select>{scopes.map(s => <option key={s}>{s}</option>)}</select></label></>}</div><button className="red-button">Submit for Admin approval <span>→</span></button><small>Registration does not grant immediate access.</small></form>}{mode === "sent" && <div className="auth-card sent"><b>✓</b><FormIntro kicker="REQUEST RECEIVED" title="Your registration is under review." text="An Admin will verify your role and contact you when access is approved."/><button className="red-button" onClick={() => setMode("login")}>Return to sign in <span>→</span></button></div>}</div><footer><span>© 2026 B2B Builders PH</span><span>Built in the Philippines</span></footer></main>;
+
+  return <main className="auth auth-split">
+    <section className="auth-panel">
+      <header className="auth-panel-header">
+        <div className="auth-logo"><span>B2B</span><strong>BUILDERS <i>PH</i></strong></div>
+      </header>
+      <div className="auth-body">
+        {mode === "login" && <form className="auth-card" onSubmit={e => { e.preventDefault(); onLogin(role); }}>
+          <FormIntro kicker="WELCOME BACK" title="Sign in to your workspace." text="Select your role and continue to your B2B Builders PH workspace."/>
+          <label>Demo role<select value={role} onChange={e => setRole(e.target.value as Role)}>{roles.map(r => <option key={r}>{r}</option>)}</select></label>
+          <label>Email or username<input required defaultValue="admin@b2bbuilders.ph" /></label>
+          <label>Password<div className="password"><input required type={show ? "text" : "password"} defaultValue="builtobuild"/><button type="button" onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button></div></label>
+          <div className="auth-options"><label><input type="checkbox" defaultChecked/> Remember me</label><button type="button">Forgot password?</button></div>
+          <button className="red-button">Enter as {role}<span>→</span></button>
+          <div className="or"><span>NEW USER?</span></div>
+          <button type="button" className="outline-button" onClick={() => setMode("register")}>Register an account <span>↗</span></button>
+          <small>Prototype access · any credentials work</small>
+        </form>}
+        {mode === "register" && <form className="auth-card register-card" onSubmit={e => { e.preventDefault(); setMode("sent"); }}>
+          <button type="button" className="back" onClick={() => setMode("login")}>← Back to sign in</button>
+          <FormIntro kicker="NEW USER REGISTRATION" title="Create your access request." text="Every account is reviewed and assigned by an Admin."/>
+          <div className="reg-grid"><label>Full name<input required placeholder="Complete name"/></label><label>Contact number<input required placeholder="+63 917 000 0000"/></label><label>Email / username<input required type="email" placeholder="name@company.ph"/></label><label>User role<select value={role} onChange={e => setRole(e.target.value as Role)}>{roles.filter(r => r !== "Admin / Owner").map(r => <option key={r}>{r}</option>)}</select></label><label className="wide">Complete address<input required placeholder="Street, barangay, city, province"/></label>{role === "Subcontractor" && <><label>Facebook account / page<input required placeholder="facebook.com/page"/></label><label>Primary scope<select>{scopes.map(s => <option key={s}>{s}</option>)}</select></label></>}</div>
+          <button className="red-button">Submit for Admin approval <span>→</span></button><small>Registration does not grant immediate access.</small>
+        </form>}
+        {mode === "sent" && <div className="auth-card sent"><b>✓</b><FormIntro kicker="REQUEST RECEIVED" title="Your registration is under review." text="An Admin will verify your role and contact you when access is approved."/><button className="red-button" onClick={() => setMode("login")}>Return to sign in <span>→</span></button></div>}
+      </div>
+      <footer><span>© 2026 B2B Builders PH</span><span>Secure project access</span></footer>
+    </section>
+    <aside className="auth-visual" aria-label="Construction steel structure"/>
+  </main>;
 }
 
 function FormIntro({ kicker, title, text }: { kicker: string; title: string; text: string }) { return <div className="form-intro"><span>{kicker}</span><h2>{title}</h2><p>{text}</p></div>; }

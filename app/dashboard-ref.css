@@ -102,6 +102,75 @@ body { background: #ded0c9; color: #141414; }
   .project-banner { border-radius: 22px; }
 }
 
+/* Clean CRM canvas, using B2B's charcoal and construction-red palette. */
+@media (min-width: 851px) {
+  .erp {
+    padding: 34px 48px 34px 112px;
+    background:
+      radial-gradient(circle at 0 100%, rgba(216, 34, 22, .3) 0 130px, transparent 131px),
+      radial-gradient(circle at 100% 0, rgba(154, 32, 32, .18) 0 170px, transparent 171px),
+      linear-gradient(135deg, #f0e8e5, #dcd2cd);
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .side {
+    inset: 50% auto auto 28px;
+    width: 58px;
+    height: min(760px, calc(100svh - 68px));
+    padding: 13px 7px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #222 0%, #121212 100%);
+    box-shadow: 0 18px 40px rgba(25, 17, 16, .25);
+  }
+  .side-brand { height: 52px; padding: 0; justify-content: center; border: 0; }
+  .side-brand > span { width: 32px; height: 32px; padding: 0; display: grid; place-items: center; border-radius: 10px; background: #d82216; color: #fff; font-size: 8px; }
+  .side-brand > div, .side-label, .role-chip, .side-user > div, .side-user > button { display: none; }
+  .side-link { height: 41px; justify-content: center; gap: 0; padding: 0; border-radius: 11px; color: #d7cdca; }
+  .side-link i { width: auto; font-size: 17px; }
+  .side-link.active { background: #d82216; color: #fff; box-shadow: 0 7px 18px rgba(216,34,22,.28); }
+  .side-link em { position: absolute; right: 3px; top: 4px; padding: 2px 4px; font-size: 6px; }
+  .side-user { justify-content: center; padding: 8px 0 0; border: 0; }
+  .side-user > b { width: 29px; height: 29px; font-size: 8px; background: #d82216; }
+
+  .shell { min-height: calc(100svh - 68px); margin-left: 0; border-radius: 27px; border: 1px solid rgba(255,255,255,.7); background: #faf8f6; box-shadow: 0 25px 62px rgba(56, 36, 31, .18); }
+  .erp.dark .shell { background: #171717; }
+  .top { height: 68px; padding: 0 30px; border-bottom: 1px solid #e7ddd8; background: rgba(255,255,255,.78); }
+  .erp.dark .top { background: rgba(23,23,23,.92); border-color: #34302e; }
+  .top > div:first-of-type { flex-direction: row; align-items: baseline; gap: 11px; }
+  .top > div:first-of-type span { color: #9a2020; font-size: 8px; }
+  .top > div:first-of-type strong { font-size: 12px; }
+  .top-actions > button, .notice-wrap > button { width: 34px; height: 34px; border-radius: 10px; }
+
+  .page { max-width: 1500px; padding: 31px 34px 55px; }
+  .page-head { margin-bottom: 23px; }
+  .page-head h1 { font-size: 35px; letter-spacing: -1.5px; }
+  .page-head p { color: #d82216; }
+  .page-head > div > span { font-size: 12px; }
+  .panel, .action-cards button { border-radius: 17px; background: #fff; border-color: #ebe2dd; box-shadow: 0 9px 23px rgba(53,35,28,.055); }
+  .erp.dark .panel, .erp.dark .action-cards button { background: var(--card); border-color: var(--line); }
+  .panel { padding: 20px; }
+  .panel-head h2 { font-size: 17px; }
+  .panel-head span, .form-title span, .items-title span { color: #9a2020; }
+
+  .hero-metrics { gap: 12px; }
+  .hero-metrics article, .subcon-hero > div { padding: 18px; border-radius: 15px; background: #fff; color: #171414; border: 1px solid #ebe2dd; box-shadow: 0 9px 22px rgba(53,35,28,.05); }
+  .hero-metrics article:first-child, .subcon-hero > div:first-child { background: linear-gradient(145deg, #e12b1e, #981e1e); color: #fff; border: 0; }
+  .hero-metrics article > strong, .subcon-hero strong { font-size: 25px; }
+  .hero-metrics span, .subcon-hero span { color: #81736d; }
+  .hero-metrics article:first-child span, .hero-metrics article:first-child p, .subcon-hero > div:first-child span, .subcon-hero > div:first-child p { color: #fff; }
+  .hero-metrics p, .subcon-hero p { color: #837670; }
+  .hero-metrics em { background: #f5e8e5; color: #9a2020; }
+  .hero-metrics article:first-child em { background: rgba(255,255,255,.18); color: #fff; }
+  .metric-line { background: #d82216; }
+  .hero-metrics article:first-child .metric-line { background: #fff; }
+  .visual-grid, .visual-grid.second { gap: 12px; margin-top: 12px; }
+  .action-cards { gap: 12px; }
+  .action-cards button { padding: 21px; }
+  .action-cards button > span { color: #d82216; }
+  .filter-bar, .segmented { box-shadow: 0 8px 20px rgba(53,35,28,.04); }
+  .segmented button.active { background: #d82216; box-shadow: 0 5px 14px rgba(216,34,22,.22); }
+}
+
 /* Profile-sidebar variation: retained B2B actions, re-composed around the latest reference. */
 @media (min-width: 851px) {
   .erp {
